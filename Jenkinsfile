@@ -22,13 +22,13 @@ pipeline {
 
         stage('SCM'){
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'sen', url: 'https://github.com/sen31088/java-demo.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/satson88/java-ci-cd.git']])
             }
         }
         
         stage('Build') {
             steps {
-                   sh "/opt/maven/bin/mvn clean install"
+                   sh "/user/bin/mvn clean install"
                     		 
                 }
             }
@@ -37,17 +37,17 @@ pipeline {
         stage('Unit Test') {
             steps {
                 
-                sh "/opt/maven/bin/mvn test"
+                sh "/user/bin/mvn test"
             }
         }
         
         stage('Push to Artifcatory') {
             steps {
-                sh "/opt/maven/bin/mvn deploy"
+                sh "/user/bin/mvn deploy"
             }
         }
 
-        stage('Code Analysis') {
+      /* stage('Code Analysis') {
             steps {
                 sh "/opt/maven/bin/mvn clean verify sonar:sonar \
                     -Dsonar.projectKey=java-demo \
@@ -55,21 +55,21 @@ pipeline {
                     -Dsonar.login=sqp_bb71945b9028eba3aa847768a63b8d4f4b622dfb"
             }
         }
-
+*/
 
         stage('Deploy') {
             steps {
                 sh ''' 
-                name=`cat pom.xml | grep -A1 java-demo | grep artifactId | awk -F'[><]' '{print $3}'`
-                version=`cat pom.xml | grep -A1 java-demo | grep version | awk -F'[><]' '{print $3}'`
+                name=`cat pom.xml | grep -A1 java-ci-cd | grep artifactId | awk -F'[><]' '{print $3}'`
+                version=`cat pom.xml | grep -A1 java-ci-cd | grep version | awk -F'[><]' '{print $3}'`
                 
                 echo "------------------------"
                 echo $name
                 echo $version
                 echo "-------------------------"
-                ssh root@10.0.1.207 <<  EOF
+                ssh root@10.0.1.191 <<  EOF
                 cd /java-app
-                curl  -o java-app.jar -u admin:pass123 "http://nexus.manolabs.co.in:8081/repository/java-demo/com/sen/$name/$version/$name-$version.jar"
+                curl  -o java-app.jar -u admin:pass123 "http://3.110.197.205:8081/repository/java-ci-cd/com/sen/$name/$version/$name-$version.jar"
                 sh start.sh
                 exit
                 EOF

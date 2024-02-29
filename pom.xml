@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sen</groupId>
-	<artifactId>java-demo</artifactId>
-	<version>4.0</version>
+	<artifactId>java-ci-cd</artifactId>
+	<version>1.0</version>
 	<name>Demoapp</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -47,13 +47,13 @@
 	<distributionManagement>
 		<repository>
 		<id>nexus</id>
-		<url>http://nexus.manolabs.co.in:8081/repository/java-demo/</url>
+		<url>http://3.110.197.205/:8081/repository/java-ci-cd/</url>
 		     
 		<!--<name>Nexus Releases</name>-->
 		</repository>
 		<snapshotRepository>
 		<id>nexus</id>
-		<url>http://nexus.manolabs.co.in:8081/repository/java-demo/</url>
+		<url>http://3.110.197.205/:8081/repository/java-ci-cd/</url>
 		<!--<name>Nexus Snapshot</name>-->
 		</snapshotRepository>
 	</distributionManagement>
