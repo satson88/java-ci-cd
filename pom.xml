@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.0</version>
+		<version>1.1.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sen</groupId>
 	<artifactId>java-ci-cd</artifactId>
-	<version>1.0</version>
+	<version>2.0</version>
 	<name>Demoapp</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -47,13 +47,13 @@
 	<distributionManagement>
 		<repository>
 		<id>nexus</id>
-		<url>http://15.206.159.227:8081/repository/java-ci-cd/</url>
+		<url>http://52.66.211.115:8081/repository/java-ci-cd/</url>
 		     
 		<!--<name>Nexus Releases</name>-->
 		</repository>
 		<snapshotRepository>
 		<id>nexus</id>
-		<url>http://15.206.159.227:8081/repository/java-ci-cd/</url>
+		<url>http://52.66.211.115:8081/repository/java-ci-cd/</url>
 		<!--<name>Nexus Snapshot</name>-->
 		</snapshotRepository>
 	</distributionManagement>
