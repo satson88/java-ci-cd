@@ -28,7 +28,7 @@ pipeline {
         
         stage('Build') {
             steps {
-                   sh "/user/bin/mvn clean install"
+                   sh "/usr/bin/mvn clean install"
                     		 
                 }
             }
@@ -37,13 +37,13 @@ pipeline {
         stage('Unit Test') {
             steps {
                 
-                sh "/user/bin/mvn test"
+                sh "/usr/bin/mvn test"
             }
         }
         
         stage('Push to Artifcatory') {
             steps {
-                sh "/user/bin/mvn deploy"
+                sh "/usr/bin/mvn deploy"
             }
         }
 
