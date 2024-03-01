@@ -69,7 +69,7 @@ pipeline {
                 echo "-------------------------"
                 ssh root@10.0.1.191 <<  EOF
                 cd /java-app
-                curl  -o java-app.jar -u admin:pass123 "http://3.6.87.3:8081/repository/java-demo/com/sen/$name/$version/$name-$version.jar"
+                curl  -o java-app.jar -u admin:pass123 "http://15.206.122.138:8081/repository/java-demo/com/sen/$name/$version/$name-$version.jar"
                 sh start.sh
                 exit
                 EOF
