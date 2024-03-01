@@ -47,7 +47,7 @@ pipeline {
             }
         }
 
-        stage('Code Analysis') {
+      /*  stage('Code Analysis') {
             steps {
                 sh "/opt/maven/bin/mvn clean verify sonar:sonar \
                     -Dsonar.projectKey=java-demo \
@@ -55,7 +55,7 @@ pipeline {
                     -Dsonar.login=sqp_bb71945b9028eba3aa847768a63b8d4f4b622dfb"
             }
         }
-
+*/
 
         stage('Deploy') {
             steps {
@@ -67,9 +67,9 @@ pipeline {
                 echo $name
                 echo $version
                 echo "-------------------------"
-                ssh root@10.0.1.207 <<  EOF
+                ssh root@10.0.1.191 <<  EOF
                 cd /java-app
-                curl  -o java-app.jar -u admin:pass123 "http://nexus.manolabs.co.in:8081/repository/java-demo/com/sen/$name/$version/$name-$version.jar"
+                curl  -o java-app.jar -u admin:pass123 "http://3.6.87.3:8081/repository/java-demo/com/sen/$name/$version/$name-$version.jar"
                 sh start.sh
                 exit
                 EOF
