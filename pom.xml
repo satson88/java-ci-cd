@@ -5,12 +5,17 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.0</version>
+		<version>22.1.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sen</groupId>
+<<<<<<< HEAD
 	<artifactId>java-demo</artifactId>
 	<version>3.0</version>
+=======
+	<artifactId>java-ci-cd</artifactId>
+	<version>2.0</version>
+>>>>>>> 9aded04a8dd78094dcea27949f9b97cda018850c
 	<name>Demoapp</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -47,13 +52,21 @@
 	<distributionManagement>
 		<repository>
 		<id>nexus</id>
+<<<<<<< HEAD
 		<url>http://3.6.87.3:8081/repository/java-demo/</url>
+=======
+		<url>http://3.108.40.101:8081/repository/java-ci-cd/</url>
+>>>>>>> 9aded04a8dd78094dcea27949f9b97cda018850c
 		     
 		<!--<name>Nexus Releases</name>-->
 		</repository>
 		<snapshotRepository>
 		<id>nexus</id>
+<<<<<<< HEAD
 		<url>http://3.6.87.3:8081/repository/java-demo/</url>
+=======
+		<url>http://3.108.40.101:8081/repository/java-ci-cd/</url>
+>>>>>>> 9aded04a8dd78094dcea27949f9b97cda018850c
 		<!--<name>Nexus Snapshot</name>-->
 		</snapshotRepository>
 	</distributionManagement>
